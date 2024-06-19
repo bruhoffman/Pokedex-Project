@@ -23,7 +23,7 @@ const PokemonCard = (props) => {
 
     useEffect(() => {
         getPokemon();
-    }, []);
+    });
 
     const getPokemon = () => {
         axios.get(pokemonUrl)
@@ -43,8 +43,8 @@ const PokemonCard = (props) => {
                 <PokemonNumber>{pokemon.id}</PokemonNumber>
                 <PokemonName>{pokemon.name}</PokemonName>
                 <TypesContainer>
-                    {pokemon.types && <img src={getTypes(pokemon.types && pokemon.types[0].type.name)} />}
-                    {pokemon.types && <img src={getTypes(pokemon.types && pokemon.types[1] && pokemon.types[1].type.name)} />}
+                    {pokemon.types && <img src={getTypes(pokemon.types && pokemon.types[0].type.name) } alt="Tipo de Pokemon"/>}
+                    {pokemon.types && <img src={getTypes(pokemon.types && pokemon.types[1] && pokemon.types[1].type.name)} alt="Tipo de Pokemon"/>}
                 </TypesContainer>
                 <a onClick={() => goToPokemonDetail(navigate, pokemon.name)}>
                     Ver detalhes

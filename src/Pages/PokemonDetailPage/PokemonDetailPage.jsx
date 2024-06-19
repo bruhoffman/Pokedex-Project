@@ -26,7 +26,7 @@ const PokemonDetailPage = () => {
 
     useEffect(() => {
         getInfosPokemon()
-    }, [])
+    })
 
     //Com o Axios, pega todas as informações do pokemon e as guarda dentro da variável estado (pokemonDetails).
     const getInfosPokemon = () => {
@@ -113,8 +113,8 @@ const PokemonDetailPage = () => {
                             <PokemonNumber>{pokemonDetails.id}</PokemonNumber>
                             <PokemonName>{pokemonDetails.name}</PokemonName>
                             <TypesContainer>
-                                {pokemonDetails.types && <img src={getTypes(pokemonDetails.types && pokemonDetails.types[0].type.name)} />}
-                                {pokemonDetails.types && <img src={getTypes(pokemonDetails.types && pokemonDetails.types[1] && pokemonDetails.types[1].type.name)} />}
+                                {pokemonDetails.types && <img src={getTypes(pokemonDetails.types && pokemonDetails.types[0].type.name)} alt="Tipo de Pokemon"/>}
+                                {pokemonDetails.types && <img src={getTypes(pokemonDetails.types && pokemonDetails.types[1] && pokemonDetails.types[1].type.name)} alt="Tipo de Pokemon"/>}
                             </TypesContainer>
                         </div>
                     </NameCard>

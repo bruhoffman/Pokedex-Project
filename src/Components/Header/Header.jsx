@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import logo from '../../assets/logo.png';
 import { ContainerHeader } from './headerStyled'
 import { useLocation, useNavigate } from 'react-router';
@@ -19,7 +19,7 @@ const Header = (props) => {
                 return (
                     <>
                         <Link color="inherit"></Link>
-                        <img src={logo} />
+                        <img src={logo} alt='Logo Pokemon' />
                         <Button variant="contained" size="large" onClick={() => goToPokemonList(navigate)}>Pokédex</Button>
                     </>
                 );
@@ -27,7 +27,7 @@ const Header = (props) => {
                 return (
                     <>
                         <Link color="inherit" onClick={() => goToHomePage(navigate)}>Todos Pokémons</Link>
-                        <img src={logo} />
+                        <img src={logo} alt='Logo Pokemon' />
                         <Link color="inherit">      </Link>
                     </>
                 );
@@ -35,14 +35,14 @@ const Header = (props) => {
                 return (
                     <>
                         <Link color="inherit" onClick={() => goToHomePage(navigate)}>Todos Pokémons</Link>
-                        <img src={logo} />
+                        <img src={logo} alt='Logo Pokemon' />
                         <Button variant="contained" size="large" background="#ff6262" onClick={() => removeFromPokedex(name.name)}>Excluir da Pokédex</Button>
                     </>
                 );
             default:
                 return (
                     <>
-                        <img src={logo} />
+                        <img src={logo} alt='Logo Pokemon'/>
                         <Button variant="contained" size="large" onClick={() => goToPokemonList(navigate)}>Pokédex</Button>
                     </>
                 );

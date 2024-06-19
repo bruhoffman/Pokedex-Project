@@ -43,7 +43,8 @@ const GlobalState = (props) => {
 
   useEffect(() => {
     pokedex.length > 0 && saveLocalStorage();
-  }, [pokedex]);
+  });
+  // Excluir a dependêncis [pokedex] para fins de teste.
 
   const getItensLocalStorage = () => {
     const pokemonsLocalStorage = localStorage.getItem("pokemons");
@@ -53,15 +54,16 @@ const GlobalState = (props) => {
 
   useEffect(() => {
     getItensLocalStorage();
-  }, []);
+  });
 
   const removeFromPokedex = (pokemonName) => {
     const newList = localStorage.getItem("pokemons");
-    const getPokemon = JSON.parse(newList)
-    const newPokedex = getPokemon.filter((pokemon) => pokemon.name !== pokemonName)
-    newPokedex.length === 0 && localStorage.removeItem("pokemons")
-    setPokedex(newPokedex)
-
+    const getPokemon = JSON.parse(newList);
+    const newPokedex = getPokemon.filter(
+      (pokemon) => pokemon.name !== pokemonName
+    );
+    newPokedex.length === 0 && localStorage.removeItem("pokemons");
+    setPokedex(newPokedex);
   };
 
   const data = {
